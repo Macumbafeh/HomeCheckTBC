@@ -260,10 +260,10 @@ HomeCheck.spells = {
     [27238] = {
         cd = 1800,
         class = "WARLOCK"
-    }
+    },
 	-- Soulshatter
     [29858] = {
         cd = 300,
         class = "WARLOCK"
-    }
+    },
 }
