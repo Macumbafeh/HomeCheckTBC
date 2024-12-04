@@ -1,3 +1,5 @@
+Just a fork where i changed spells to match with TBC spellID
+
 ![ScreenShot](https://advent-wow.ru/HomeCheck/HomeCheck.png)
 
 # Why HomeCheck?
