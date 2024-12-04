@@ -1,57 +1,118 @@
 HomeCheck.spells = {
     -- PS
     [33206] = {
-        cd = 180,
+        cd = 120,
         class = "PRIEST",
         talentTab = 1,
         talentIndex = 25
     },
-    -- DSac
-    [64205] = {
-        cd = 120,
-        class = "PALADIN",
-        talentTab = 2,
-        talentIndex = 6,
-        notarget = true
+	-- Fear Ward
+    [6346] = {
+        cd = 180,
+        class = "PRIEST"
     },
-    -- GS
-    [47788] = {
-        cd = 70,
+	-- Shadowfiend
+    [34433] = {
+        cd = 300,
+        class = "PRIEST"
+    },
+	-- PI
+    [37274] = {
+        cd = 180,
         class = "PRIEST",
-        talentTab = 2,
-        talentIndex = 27
+        talentTab = 1,
+        talentIndex = 19
     },
-    -- Hand of Sacrifice
-    [6940] = {
-        cd = 120,
+
+    -- Blessing of Sacrifice
+    [27148] = {
+        cd = 30,
         class = "PALADIN"
     },
-    -- HoF
+    -- BoF
     [1044] = {
         cd = 25,
         class = "PALADIN"
     },
-    -- Starfall
-    [53201] = {
+	-- Divine Shield
+    [1020] = {
+        cd = 300,
+        class = "PALADIN",
+        tanksonly = true
+    },
+    -- BoP
+    [10278] = {
+        cd = 300,
+        class = "PALADIN"
+    },
+	-- Avenging Wrath
+    [31884] = {
+        cd = 180,
+        class = "PALADIN"
+    },
+    -- Divine Protection
+    [498] = {
+        cd = 180,
+        class = "PALADIN",
+        tanksonly = true
+    },
+    -- Lay on Hands
+    [27154] = {
+        cd = 1200,
+        class = "PALADIN"
+    },
+
+	-- Holy Wrath
+    [27139] = {
         cd = 60,
-        class = "DRUID",
-        talentTab = 1,
-        talentIndex = 28,
+        class = "PALADIN",
         notarget = true
     },
+
+	-- Divine Intervention
+    [19752] = {
+        cd = 3600,
+        class = "PALADIN"
+    },
+
     -- Rebirth
-    [48477] = {
-        cd = 600,
+    [20484] = {
+        cd = 1200,
         class = "DRUID"
     },
     -- Innervate
     [29166] = {
-        cd = 180,
+        cd = 360,
         class = "DRUID"
+    },
+	-- Barkskin
+    [22812] = {
+        cd = 60,
+        class = "DRUID",
+        tanksonly = true
+    },
+
+    -- Tranquility
+    [26983] = {
+        cd = 600,
+        class = "DRUID",
+        notarget = true
+    },
+    -- Frenzied Regeneration
+    [26983] = {
+        cd = 180,
+        class = "DRUID",
+        tanksonly = true
+    },
+	-- "Challenging Roar
+    [5209] = {
+        cd = 600,
+        class = "DRUID",
+        tanksonly = true
     },
     -- Misdirection initial cast
     [34477] = {
-        cd = 60,
+        cd = 120,
         class = "HUNTER",
         parent = 35079,
         noself = true
@@ -62,87 +123,48 @@ HomeCheck.spells = {
         class = "HUNTER",
         noself = true
     },
-    -- Tricks of the Trade initial cast
-    [57934] = {
-        cd = 60,
-        class = "ROGUE",
-        parent = 59628,
-        noself = true
+	-- Readiness
+    [23989] = {
+        cd = 180,
+        class = "HUNTER",
+        talentTab = 2,
+        talentIndex = 14,
+        notarget = true
     },
-    -- Tricks of the Trade
-    [59628] = {
+	-- Feign Death
+    [5384] = {
         cd = 30,
-        class = "ROGUE",
-        noself = true
+        class = "HUNTER",
+        talentTab = 2,
+        talentIndex = 14,
+        notarget = true
     },
-    -- Divine Shield
-    [642] = {
-        cd = 300,
-        class = "PALADIN",
-        tanksonly = true
+	-- Tranquilizing Shot
+    [19801] = {
+        cd = 20,
+        class = "HUNTER"
     },
-    -- HoP
-    [10278] = {
-        cd = 300,
-        class = "PALADIN"
+	-- Silencing Shot
+    [34490] = {
+        cd = 20,
+        class = "HUNTER"
     },
-    -- Divine Protection
-    [498] = {
-        cd = 180,
-        class = "PALADIN",
-        tanksonly = true
+	
+	-- kick
+	
+    [1766] = {
+        cd = 10,
+        class = "ROGUE"
     },
-    -- Lay on Hands
-    [48788] = {
-        cd = 1200,
-        class = "PALADIN"
-    },
-    -- Hysteria
-    [49016] = {
-        cd = 180,
-        class = "DEATHKNIGHT",
-        talentTab = 1,
-        talentIndex = 19
-    },
+
     -- Reincarnation
-    --20608?
+    --added for healing spec, Enh and ele will be a cd of 3600
     [21169] = {
-        cd = 1800,
+        cd = 2400,
         class = "SHAMAN"
     },
-    -- Aura Mastery
-    [31821] = {
-        cd = 120,
-        class = "PALADIN",
-        talentTab = 1,
-        talentIndex = 6,
-        notarget = true
-    },
-    -- Fear Ward
-    [6346] = {
-        cd = 180,
-        class = "PRIEST"
-    },
-    -- Hymn of Hope
-    [64901] = {
-        cd = 360,
-        class = "PRIEST",
-        notarget = true
-    },
-    -- Divine Hymn
-    [64843] = {
-        cd = 480,
-        class = "PRIEST",
-        notarget = true
-    },
-    -- Eyes of Twilight (normal)
-    [75490] = {
-        cd = 120
-    },
-    -- Eyes of Twilight (heroic)
-    [75495] = {
-        cd = 120
-    },
+    
+    
     -- Mana Tide Totem
     [16190] = {
         cd = 300,
@@ -152,153 +174,41 @@ HomeCheck.spells = {
     },
     -- Heroism
     [32182] = {
-        cd = 300,
+        cd = 600,
         class = "SHAMAN"
     },
     -- Bloodlust
     [2825] = {
-        cd = 300,
+        cd = 600,
         class = "SHAMAN"
     },
-    -- Vampiric Blood
-    [55233] = {
-        cd = 60,
-        class = "DEATHKNIGHT",
-        talentTab = 1,
-        talentIndex = 23,
-        tanksonly = true
-    },
-    -- Icebound Fortitude
-    [48792] = {
-        cd = 120,
-        class = "DEATHKNIGHT",
-        tanksonly = true
-    },
-    -- Anti-Magic Shell
-    [48707] = {
-        cd = 45,
-        class = "DEATHKNIGHT",
-        tanksonly = true
-    },
-    -- Blood Armor (4T10)
-    [70654] = {
-        cd = 60,
-        class = "DEATHKNIGHT"
-    },
-    -- Aegis of Dalaran (heroic)
-    [71638] = {
-        cd = 60
-    },
-    -- Army of the Dead
-    [42650] = {
-        cd = 600,
-        class = "DEATHKNIGHT",
-        notarget = true
-    },
-    -- Mark of Blood
-    [49005] = {
-        cd = 180,
-        class = "DEATHKNIGHT",
-        talentTab = 1,
-        talentIndex = 15
-    },
-    -- Holy Wrath
-    [48817] = {
-        cd = 30,
-        class = "PALADIN",
-        notarget = true
-    },
-    -- Hand of Salvation
-    [1038] = {
-        cd = 120,
-        class = "PALADIN"
-    },
-    -- Ardent Defender
-    [66233] = {
-        cd = 120,
-        class = "PALADIN",
-        talentTab = 2,
-        talentIndex = 18
-    },
+    
+    
+    
+    
     -- Stoneform
     [20594] = {
-        cd = 120,
+        cd = 180,
         race = "Dwarf",
         tanksonly = true
     },
-    -- Shield Wall
-    [871] = {
-        cd = 300,
-        class = "WARRIOR",
-        tanksonly = true
-    },
-    -- Last Stand
-    [12975] = {
-        cd = 180,
-        class = "WARRIOR",
-        talentTab = 3,
-        talentIndex = 6,
-        tanksonly = true
-    },
-    -- Enraged Regeneration
-    [55694] = {
-        cd = 180,
-        class = "WARRIOR",
-        tanksonly = true
-    },
-    -- Barkskin
-    [22812] = {
-        cd = 60,
-        class = "DRUID",
-        tanksonly = true
-    },
-    -- Survival Instincts
-    [61336] = {
-        cd = 180,
-        class = "DRUID",
-        talentTab = 2,
-        talentIndex = 7,
-        tanksonly = true
-    },
-    -- Typhoon
-    [61384] = {
-        cd = 20,
-        class = "DRUID",
-        talentTab = 1,
-        talentIndex = 24
-    },
-    -- Tranquility
-    [48447] = {
-        cd = 480,
-        class = "DRUID",
-        notarget = true
-    },
-    -- Frenzied Regeneration
-    [22842] = {
-        cd = 180,
-        class = "DRUID",
-        tanksonly = true
-    },
-    -- Dispersion
-    [47585] = {
-        cd = 120,
-        class = "PRIEST",
-        talentTab = 3,
-        talentIndex = 27
-    },
+    
+    
+    
     -- Ice Block
     [45438] = {
         cd = 300,
         class = "MAGE"
     },
-    -- Every Man for Himself
-    [59752] = {
-        cd = 120,
-        race = "Human"
-    },
+    
     -- Invisibility
     [66] = {
         cd = 180,
+        class = "MAGE"
+    },
+	-- Counterspell
+    [2139] = {
+        cd = 24,
         class = "MAGE"
     },
     -- Evocation
@@ -306,46 +216,54 @@ HomeCheck.spells = {
         cd = 240,
         class = "MAGE"
     },
-    -- Divine Intervention
-    [19752] = {
-        cd = 600,
-        class = "PALADIN"
+	
+    -- Shield Wall
+    [871] = {
+        cd = 180,
+        class = "WARRIOR",
+        tanksonly = true
     },
+	-- Challenging Shout
+    [1161] = {
+        cd = 600,
+        class = "WARRIOR",
+        tanksonly = true
+    },
+    -- Last Stand
+    [12975] = {
+        cd = 480,
+        class = "WARRIOR",
+        talentTab = 3,
+        talentIndex = 6,
+        tanksonly = true
+    },
+    
     -- Death Wish
     [12292] = {
         cd = 180,
         class = "WARRIOR",
         talentTab = 2,
         talentIndex = 14
-    },
-    -- PI
-    [10060] = {
-        cd = 120,
-        class = "PRIEST",
-        talentTab = 1,
-        talentIndex = 19
-    },
-    -- Readiness
-    [23989] = {
-        cd = 180,
-        class = "HUNTER",
-        talentTab = 2,
-        talentIndex = 14,
-        notarget = true
-    },
-    -- Dismantle
-    [51722] = {
-        cd = 60,
-        class = "ROGUE"
-    },
+    },   
     -- Disarm
     [676] = {
         cd = 60,
         class = "WARRIOR"
     },
+	-- Pummel
+    [6554] = {
+        cd = 10,
+        class = "WARRIOR"
+    },
+	
     -- Soulstone Resurrection buff
-    [47883] = {
-        cd = 900,
+    [27238] = {
+        cd = 1800,
+        class = "WARLOCK"
+    }
+	-- Soulshatter
+    [29858] = {
+        cd = 300,
         class = "WARLOCK"
     }
 }
