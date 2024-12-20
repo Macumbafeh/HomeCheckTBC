@@ -4,7 +4,7 @@ HomeCheck.spells = {
         cd = 120,
         class = "PRIEST",
         talentTab = 1,
-        talentIndex = 25
+        talentIndex = 22
     },
 	-- Fear Ward
     [6346] = {
@@ -127,16 +127,16 @@ HomeCheck.spells = {
     [23989] = {
         cd = 180,
         class = "HUNTER",
-        talentTab = 2,
-        talentIndex = 14,
+        talentTab = 3,
+        talentIndex = 23,
         notarget = true
     },
 	-- Feign Death
     [5384] = {
         cd = 30,
         class = "HUNTER",
-        talentTab = 2,
-        talentIndex = 14,
+       -- talentTab = 2,
+       -- talentIndex = 14,
         notarget = true
     },
 	-- Tranquilizing Shot
@@ -160,8 +160,11 @@ HomeCheck.spells = {
     -- Reincarnation
     --added for healing spec, Enh and ele will be a cd of 3600
     [21169] = {
-        cd = 2400,
-        class = "SHAMAN"
+        cd = 3600,
+        class = "SHAMAN",
+		talentTab = 3,
+		talentIndex = 3,
+		talentReduction = {600, 1200} -- Reduction values for 1 and 2 talent points
     },
     
     
@@ -170,7 +173,7 @@ HomeCheck.spells = {
         cd = 300,
         class = "SHAMAN",
         talentTab = 3,
-        talentIndex = 17
+        talentIndex = 16
     },
     -- Heroism
     [32182] = {
@@ -242,8 +245,8 @@ HomeCheck.spells = {
     [12292] = {
         cd = 180,
         class = "WARRIOR",
-        talentTab = 2,
-        talentIndex = 14
+        talentTab = 1,
+        talentIndex = 13
     },   
     -- Disarm
     [676] = {

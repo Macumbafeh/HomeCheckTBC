@@ -908,43 +908,49 @@ function HomeCheck:getSpellCooldown(frame)
     local CDmodifier = 0
     if frame.spellID == 498 or frame.spellID == 642 then
         -- Divine Shield and Divine Protection
-        CDmodifier = -30 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 2, 14)) or 0)
-    elseif frame.spellID == 10278 then
-        -- HoP
-        CDmodifier = -60 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 2, 4)) or 0)
-    elseif frame.spellID == 48788 then
-        -- Lay on Hands
-        CDmodifier = -120 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 1, 8)) or 0)
-        if self:UnitHasGlyph(frame.playerName, 57955) then
-            CDmodifier = CDmodifier - 300
+        CDmodifier = -30 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 2, 16)) or 0)
+	elseif frame.spellID == 21169 then
+        -- Reincarnation: Adjust cooldown based on talents
+        local talentPoints = select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 3, 3))
+        if talentPoints and talentPoints > 0 then
+            CDmodifier = -self.spells[frame.spellID].talentReduction[talentPoints]
         end
+    elseif frame.spellID == 10278 then
+        -- BoP
+        CDmodifier = -60 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 2, 4)) or 0)
+    elseif frame.spellID == 27154 then
+        -- Lay on Hands
+        CDmodifier = -20 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 1, 7)) or 0)
+       -- if self:UnitHasGlyph(frame.playerName, 57955) then
+         --   CDmodifier = CDmodifier - 300
+        -- end
     elseif frame.spellID == 20608 then
         -- Reincarnation
         local talentPoints = select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 3, 3))
         if talentPoints == 1 then
-            CDmodifier = -420
+            CDmodifier = -600
         elseif talentPoints == 2 then
-            CDmodifier = -900
+            CDmodifier = -1200
         end
     elseif frame.spellID == 871 then
         -- Shield Wall
-        CDmodifier = -30 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 3, 13)) or 0)
-        if self:UnitHasGlyph(frame.playerName, 63329) then
-            CDmodifier = CDmodifier - 120
-        end
-    elseif frame.spellID == 12975 then
+        CDmodifier = -4 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 1, 18)) or 0)
+       -- if self:UnitHasGlyph(frame.playerName, 63329) then
+         --   CDmodifier = CDmodifier - 120
+        -- end
+   -- elseif frame.spellID == 12975 then
         -- Last Stand
-        if self:UnitHasGlyph(frame.playerName, 58376) then
-            CDmodifier = CDmodifier - 60
-        end
-    elseif frame.spellID == 48447 then
+     --   if self:UnitHasGlyph(frame.playerName, 58376) then
+       --     CDmodifier = CDmodifier - 60
+       -- end
+   -- elseif frame.spellID == 26983 then
         -- Tranquility
-        local talentPoints = select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 3, 14))
-        if talentPoints == 1 then
-            CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.3
-        elseif talentPoints == 2 then
-            CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.5
-        end
+     --   local talentPoints = select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 3, 14))
+       -- if talentPoints == 1 then
+         --   CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.3
+       -- elseif talentPoints == 2 then
+         --   CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.5
+       -- end
     elseif frame.spellID == 47585 then
         -- Dispersion
         if self:UnitHasGlyph(frame.playerName, 63229) then
@@ -952,23 +958,21 @@ function HomeCheck:getSpellCooldown(frame)
         end
     elseif frame.spellID == 45438 then
         -- Ice Block
-        local talentPoints = select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 3, 3))
+        local talentPoints = select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 3, 17))
         if talentPoints == 1 then
-            CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.07
+            CDmodifier = -30
         elseif talentPoints == 2 then
-            CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.14
-        elseif talentPoints == 3 then
-            CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.2
+            CDmodifier = -60
         end
-    elseif frame.spellID == 66 or frame.spellID == 12051 then
+   -- elseif frame.spellID == 66 or frame.spellID == 12051 then
         -- Invisibility or Evocation
-        CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.15 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 1, 24)) or 0)
-    elseif frame.spellID == 12292 then
+      --  CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.15 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 1, 24)) or 0)
+   -- elseif frame.spellID == 12292 then
         -- Death Wish
-        CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.11 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 2, 18)) or 0)
-    elseif frame.spellID == 10060 or frame.spellID == 33206 then
+       -- CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.11 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 2, 18)) or 0)
+   -- elseif frame.spellID == 10060 or frame.spellID == 33206 then
         -- Power Infusion and Pain Suppression
-        CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.1 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 1, 23)) or 0)
+     --   CDmodifier = -(self.spells[frame.spellID] and self.spells[frame.spellID].cd or 0) * 0.1 * (select(5, self.LibGroupTalents:GetTalentInfo(frame.playerName, 1, 23)) or 0)
     elseif frame.spellID == 47788 then
         -- Guardian spirit
         if frame.CDLeft > self.spells[frame.spellID].cd then
