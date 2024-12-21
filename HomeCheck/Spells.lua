@@ -112,14 +112,14 @@ HomeCheck.spells = {
     },
     -- Misdirection initial cast
     [34477] = {
-        cd = 120,
+        cd = 30,
         class = "HUNTER",
         parent = 35079,
         noself = true
     },
     -- Misdirection
     [35079] = {
-        cd = 30,
+        cd = 120,
         class = "HUNTER",
         noself = true
     },
